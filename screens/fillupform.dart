@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:mobile_wallet_app/backend/user_init_fillup.dart';
 class fillupform extends StatefulWidget {
   @override
   fillupstate createState() => fillupstate();
 }
-class userdata{
-  String username="";
-  String Nickname="";
-}
-createdata(username){
-  print(username);
-}
+
 class fillupstate extends State<fillupform> {
   final _formKey = GlobalKey<FormState>();
   userdata data= new userdata();

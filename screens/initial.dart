@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
+import 'package:mobile_wallet_app/backend/initfunctions.dart';
 void main() => runApp(MaterialApp(
   home: InitialLoading(),
 ));
@@ -10,6 +11,7 @@ void main() => runApp(MaterialApp(
 class InitialLoading extends StatefulWidget {
   @override
   _InitialLoadingState createState() => _InitialLoadingState();
+
 }
 
 class _InitialLoadingState extends State<InitialLoading> {
@@ -17,7 +19,12 @@ class _InitialLoadingState extends State<InitialLoading> {
 
   void _timer() async {
     await new Future.delayed(const Duration(seconds : 5));
-    Navigator.popAndPushNamed(context, '/fillupform');
+    if(initcheck()) {
+      Navigator.popAndPushNamed(context, '/homescreen');
+    }
+    else{
+      Navigator.popAndPushNamed(context, '/fillupform');
+    }
   }
 
   @override
